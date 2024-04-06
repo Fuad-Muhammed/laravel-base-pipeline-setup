@@ -13,6 +13,7 @@ COPY . .
 
 # laravel init processes
 RUN composer run post-autoload-dump \
+	&& cp .env.example .env \
 	&& php artisan key:generate \
 	&& php artisan migrate
 
